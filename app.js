@@ -102,7 +102,7 @@ app.get('/pull', function (req, res) {
 //express server startup			
 web_server = app.listen(port, function () {
     console.log('<< listen on port %s', port);
-    console.log('<< debug message should be sent to http://{ IP_ADDRESS }:%s?s={ IDENTIFIER }&o={ DEBUG_MESSAGE }', port);	
+    console.log('<< debug message should be sent to http://{ IP_ADDRESS }:%s/push?s={ IDENTIFIER }&o={ DEBUG_MESSAGE }', port);	
     console.log('<< Ctrl + C to interrupt the process (In Windows)');
     OPEN('http://localhost:' +  port);	
 });			
