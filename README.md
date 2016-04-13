@@ -18,4 +18,4 @@ curl http://192.168.1.1:8080/push?s=d5fe7231-012c-11e6-b051-8db09cca93c8&o=testi
 ## License
 MIT
 ## Author
-Steve Mak (ssmak)
+ssmak
