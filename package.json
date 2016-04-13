@@ -1,0 +1,36 @@
+{
+  "name": "http-debug-console",
+  "version": "1.0.0",
+  "description": "Echo the debug message to http server and view from your browser in real time.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ssmak/http-debug-console.git"
+  },
+  "keywords": [
+    "console",
+    "debug",
+    "remote",
+    "debug",
+    "http",
+    "console",
+    "remote",
+    "output",
+    "breakpoint"
+  ],
+  "author": "ssmak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ssmak/http-console/issues"
+  },
+  "homepage": "https://github.com/ssmak/http-console#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "fs": "0.0.2",
+    "open": "0.0.5",
+    "path": "^0.12.7"
+  }
+}
