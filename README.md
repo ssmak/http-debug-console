@@ -1,10 +1,9 @@
 # http-debug-console
-Echo the debug message to http server and view from your browser in real time.
-```
-node app.js 8080 //listen on port 8080
-```
+## Methodology
+Let a web server sits between client browser and remote server(debug target). So the output/debug message of the server side script can post to the web server and then view in the client browser in real time. (Or you may see that's a server side debugger)
+
 ## Quick Start
-(1) Run the program (#Assume the server runs on 192.168.1.1 with port 8080).
+(1) Run the script (#Assume the server runs on 192.168.1.1 with port 8080).
 ```
 node app.js 8080
 ```
