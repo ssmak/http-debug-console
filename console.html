@@ -155,7 +155,7 @@
                     //failed
                 });
 
-                //pull debug message from server per 1 minute
+                //pull debug message from server per 1 second
                 $interval(function () {
                     $http({
                         method: 'GET',
@@ -164,8 +164,7 @@
                         //success
                         if(response.data.length > 0) {
                             //show timestamp
-                            var now = new Date();
-                            $scope.cache = '[' + now.toLocaleTimeString() + '] ' + response.data + $scope.cache;
+                            $scope.cache = response.data + $scope.cache;
                             $scope.output = $scope.cache;
                         }
                     }, function errorCallback(response) {

@@ -16,6 +16,7 @@ const PATH = require('path');
 const FS = require('fs');
 const OPEN = require('open');
 const APP_INFO = require('./package.json');
+const argv = require('yargs').argv;
 
 //constants
 const DEBUG = false;
@@ -39,14 +40,15 @@ if(!DEBUG) {
 }
 
 //variables
+var host = '127.0.0.1';
 var port = 8080;
 var app, web_server;
 var cache = {};
 
-if(/^\d{1,5}$/.test(process.argv[2])) {
-	//specified port number
-	port = process.argv[2];
-}
+//specified host address
+host = argv.host ? argv.host : '127.0.0.1';
+//specified port number
+port = argv.port ? argv.port: 8080;
 
 //web requests handler
 app = EXPRESS();
@@ -65,12 +67,13 @@ app.get('/', function (req, res) {
 app.get('/push', function (req, res) {
     debug.log('received query: ' + req.query);
     if(req.query.s != null && req.query.o != null) {
+		var now = new Date();
         if(cache[req.query.s] == null) {
             //new signature
-            cache[req.query.s] = req.query.o;
+            cache[req.query.s] = '[' + now.toLocaleTimeString() + '] ' + req.query.o;
         } else {
             //old, signature already existed
-            cache[req.query.s] = req.query.o + '\n' + cache[req.query.s];
+            cache[req.query.s] = '[' + now.toLocaleTimeString() + '] ' + req.query.o + '\n' + cache[req.query.s];
         }
         debug.log('cached: ' + cache[req.query.s]);
         res.send('ok');
@@ -104,5 +107,5 @@ web_server = app.listen(port, function () {
     console.log('<< listen on port %s', port);
     console.log('<< debug message should be sent to http://{ IP_ADDRESS }:%s/push?s={ IDENTIFIER }&o={ DEBUG_MESSAGE }', port);	
     console.log('<< Ctrl + C to interrupt the process (In Windows)');
-    OPEN('http://localhost:' +  port);	
+    OPEN('http://' + host + ':' + port);	
 });			

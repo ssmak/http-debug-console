@@ -5,7 +5,7 @@ Let a web server sits between client browser and remote server(debug target). So
 ## Quick Start
 (1) Run the script (#Assume the server runs on 192.168.1.1 with port 8080).
 ```
-node app.js 8080
+node app.js --host 192.168.1.1 --port 8080
 ```
 (2) Open your favourite browser and visit here http://192.168.1.1:8080 .
 
