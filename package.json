@@ -28,9 +28,9 @@
   },
   "homepage": "https://github.com/ssmak/http-console#readme",
   "dependencies": {
-    "express": "^4.13.4",
+    "express": "^4.16.4",
     "fs": "0.0.2",
-    "open": "0.0.5",
+    "open": "^6.2.0",
     "path": "^0.12.7",
     "yargs": "^8.0.2"
   }
