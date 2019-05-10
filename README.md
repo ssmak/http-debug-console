@@ -1,4 +1,4 @@
-# http-debug-console
+# http-debug-console <img src="https://img.shields.io/static/v1.svg?label=Deprecated&message=2019/05/10&color=red" />
 ## Methodology
 Let a web server sits between client browser and remote server(debug target). So the output/debug message of the server side script can post to the web server and then view in the client browser in real time. (Or you may see that's a server side debugger)
 
